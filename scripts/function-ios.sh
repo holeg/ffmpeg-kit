@@ -62,10 +62,10 @@ libraries are created under the prebuilt folder.\n"
 }
 
 enable_main_build() {
-  if [[ $(compare_versions "$DETECTED_IOS_SDK_VERSION" "12.1") -le 0 ]]; then
+  if [[ $(compare_versions "$DETECTED_IOS_SDK_VERSION" "16.0") -le 0 ]]; then
     export IOS_MIN_VERSION=$DETECTED_IOS_SDK_VERSION
   else
-    export IOS_MIN_VERSION=12.1
+    export IOS_MIN_VERSION=16.0
   fi
 
   if [[ $(compare_versions "$DETECTED_IOS_SDK_VERSION" "14.0") -le 0 ]]; then
@@ -419,7 +419,7 @@ get_ldflags() {
 
 set_toolchain_paths() {
   if [ ! -f "${FFMPEG_KIT_TMPDIR}/gas-preprocessor.pl" ]; then
-    DOWNLOAD_RESULT=$(download "https://github.com/arthenica/gas-preprocessor/raw/v20210917/gas-preprocessor.pl" "gas-preprocessor.pl" "exit")
+    DOWNLOAD_RESULT=$(download "https://github.com/holeg/gas-preprocessor/raw/v20210917/gas-preprocessor.pl" "gas-preprocessor.pl" "exit")
     if [[ ${DOWNLOAD_RESULT} -ne 0 ]]; then
       exit 1
     fi
