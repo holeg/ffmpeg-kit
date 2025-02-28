@@ -71,7 +71,7 @@ enable_main_build() {
   if [[ $(compare_versions "$DETECTED_IOS_SDK_VERSION" "14.0") -le 0 ]]; then
     export MAC_CATALYST_MIN_VERSION=$DETECTED_IOS_SDK_VERSION
   else
-    export MAC_CATALYST_MIN_VERSION=14.0
+    export MAC_CATALYST_MIN_VERSION=16.0
   fi
 }
 
